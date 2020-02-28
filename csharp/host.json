@@ -1,0 +1,17 @@
+{
+    "version": "2.0",
+    "logging": {
+        "applicationInsights": {
+            "samplingExcludedTypes": "Request",
+            "samplingSettings": {
+                "isEnabled": true
+            }
+        }
+    },
+    // This host.json would only be valid for checkpoint based triggers (CosmosDB, Event Hubs, Kafka)
+    "checkpointRetryPolicy":
+    {
+        "retryCount": 10, // -1 for infinite
+        "delay": "00:00:05"
+    }
+}

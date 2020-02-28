@@ -1,0 +1,13 @@
+{
+  "version": "2.0",
+  "extensionBundle": {
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[1.*, 2.0.0)"
+  },
+  // This host.json would only be valid for checkpoint based triggers (CosmosDB, Event Hubs, Kafka)
+  "checkpointRetryPolicy":
+  {
+    "retryCount": 10, // -1 for infinite
+    "delay": "00:00:05"
+  }
+}
