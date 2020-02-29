@@ -1,4 +1,6 @@
-# Retry design proposal (C#)
+# Retry design proposal
+
+🔬 This is a proposal for a design. Feedback can be tracked in this issue: https://github.com/Azure/azure-webjobs-sdk/issues/1597
 
 The host.json is used to set the general retry policy:
 
