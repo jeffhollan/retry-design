@@ -2,7 +2,7 @@
 
 The host.json is used to set the general retry policy:
 
-```json
+```
 {
   "version": "2.0",
   // ...
