@@ -18,7 +18,7 @@ public class EventHubTrigger {
         final ExecutionContext context
     ) 
     {
-        context.getLogger().info("Java Event Hub trigger function executed.");
+        context.getLogger().info("Process attempt " + context.getCurrentRetryCount());
         Boolean someValue;
         try 
         {

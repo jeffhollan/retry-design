@@ -12,10 +12,14 @@ namespace Company.Function
     public static class EventHubTrigger
     {
         [FunctionName("EventHubTrigger")]
-        public static async Task<RetryResult> Run([EventHubTrigger("myeventhub", Connection = "EventHubConnectionString")] EventData[] events, ILogger log)
+        public static async Task<RetryResult> Run(
+            [EventHubTrigger("myeventhub", Connection = "EventHubConnectionString")] EventData[] events, 
+            ExecutionContext context,
+            ILogger log)
         {
             var exceptions = new List<Exception>();
             bool someValue;
+            log.LogInformation($"Batch attempt {context.currentRetryCount}");
 
             foreach (EventData eventData in events)
             {
